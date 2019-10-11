@@ -150,19 +150,19 @@ ressultBtn.addEventListener('click', function () {
 });
 
 function Summ(a, b) {
-    if(a == null || b == null){
-        return false;
+    if(a == null || b == null){   // проверяем не приходит ли пустота в нашу функцию  
+        return false;// это не оьезательно
     }
-    if(typeof a !== 'number' || typeof b !== 'number'){
-        return 'не число';
+    if(typeof a !== 'number' || typeof b !== 'number'){ // проверка что приходят только числа)) 
+        return 'не число'; 
     }
     else{
-        a += b;
-        let d = String(a);
+        a += b;  // а возвращается числом, число хер откатишь ну в плане 
+        let d = String(a); // а вот тут магия начинается
         a = cutDisplay(d);
         a = parseFloat(a);
         return a;
-    }
+    }   найс
 
 }
 

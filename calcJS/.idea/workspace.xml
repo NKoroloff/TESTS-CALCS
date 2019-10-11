@@ -25,7 +25,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Одномерные массивы тесты" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -52,7 +52,8 @@
       <workItem from="1570731348651" duration="952000" />
       <workItem from="1570734246395" duration="133000" />
       <workItem from="1570740638583" duration="5717000" />
-      <workItem from="1570823631264" duration="1443000" />
+      <workItem from="1570823631264" duration="2056000" />
+      <workItem from="1570825834451" duration="22000" />
     </task>
     <servers />
   </component>
@@ -64,7 +65,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -76,13 +79,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/main.js</url>
           <line>48</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/js/main.js</url>
           <line>57</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
