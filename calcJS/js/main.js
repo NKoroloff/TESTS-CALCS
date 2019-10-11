@@ -16,6 +16,18 @@ let ressultBtn = document.getElementById('equally');
 let allBtns = document.querySelectorAll('.btn,.bigbuttonend_n');
 
 
+// блокировка клавы + правого клика
+window.oncontextmenu = function () {
+    alert('По Т3 отключили правую мышку, работает только левый клик')
+    return false ;
+}
+function press(){
+    alert('Клавиатура отключена по Т3, работает только левый клик');
+}
+document.onkeydown=press;
+// блокировка клавы + правого клика
+
+
 for (let i = 0; i < allBtns.length; i++) {
     let btn = allBtns[i];
     btn.addEventListener('click', function (e) {
@@ -30,7 +42,7 @@ let clickNumber = num => {
         check = false;
     } else {
         display.value += num;
-        cutDisplay(display.value);
+        displayCut(display.value);
     }
 }
 
@@ -91,28 +103,7 @@ clearBtn.addEventListener('click', function () {
     check = true;
     ressultFlag = true;
     console.log("Clear");
-})
-
-function Summ(a, b) {
-    a += b;
-    return a
-}
-
-function minus(a, b) {
-    a -= b;
-    return a
-}
-
-function divide(a, b) {
-    a /= b;
-    return a
-}
-
-function multiply(a, b) {
-    a *= b;
-    return a
-}
-
+});
 ressultBtn.addEventListener('click', function () {
     if (ressultFlag) {
         countNumber = +display.value;
@@ -153,17 +144,95 @@ ressultBtn.addEventListener('click', function () {
             break;
     }
     display.value = memoryNumber;
-    cutDisplay(display.value);
+    displayCut(display.value);
     memoryNumber = 0;
     countNumber = 0;
 });
 
+function Summ(a, b) {
+    if(a == null || b == null){
+        return false;
+    }
+    if(typeof a !== 'number' || typeof b !== 'number'){
+        return 'не число';
+    }
+    else{
+        a += b;
+        let d = String(a);
+        a = cutDisplay(d);
+        a = parseFloat(a);
+        return a;
+    }
+
+}
+
+function minus(a, b) {
+    if(a == null || b == null){
+        return false;
+    }
+    if(typeof a !== 'number' || typeof b !== 'number'){
+        return 'не число';
+    }
+    else{
+        a -= b;
+        let d = String(a);
+        a = cutDisplay(d);
+        a = parseFloat(a);
+        return a;
+    }
+}
+
+function divide(a, b) {
+    if(a == null || b == null){
+        return false;
+    }
+    if(typeof a !== 'number' || typeof b !== 'number'){
+        return 'не число';
+    }
+    else if (b === 0){
+        return 0;
+    }
+    else{
+        a /= b;
+        let d = String(a);
+        a = cutDisplay(d);
+        a = parseFloat(a);
+        return a;
+    }
+
+}
+
+function multiply(a, b) {
+    if(a == null || b == null){
+        return false;
+    }
+    if(typeof a !== 'number' || typeof b !== 'number'){
+        return 'не число';
+    }
+    else if (b === 0){
+        return 0;
+    }
+    else{
+        a *= b;
+        let d = String(a);
+        a = cutDisplay(d);
+        a = parseFloat(a);
+        return a;
+    }
+}
+
 function cutDisplay(a) {
+    if (a == null){
+        return false
+    }
     if (a.length > 9) {
         a = a.slice(0, 9);
     }
-    display.value = a;
     return a;
+}
+
+function displayCut(a){
+    display.value = cutDisplay(a)
 }
 
 function lastOperation() {
