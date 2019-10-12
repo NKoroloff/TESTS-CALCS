@@ -178,7 +178,6 @@ if (ressultBtn) {
     });
 }
 
-
 function Summ(a, b) {
     if (a == null || b == null) {
         return false;
