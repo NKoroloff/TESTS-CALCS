@@ -7,7 +7,8 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     -o-user-select: none;
-    -webkit-user-select: none
+    margin: 0px;
+    -webkit-user-select: none;
 }
 #mocha{
     margin-top:1500px!important;
@@ -25,7 +26,8 @@ body {
     width: 100%;
     box-sizing: border-box;
     border: none;
-    text-align: right;
+    text-align: left;
+	padding-left:10px;
     height: 50px
 }
 

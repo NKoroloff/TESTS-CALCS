@@ -18,14 +18,14 @@ let allBtns = document.querySelectorAll('.btn,.bigbuttonend_n');
 
 // блокировка клавы + правого клика
 window.oncontextmenu = function () {
-    alert('По Т3 отключили правую мышку, работает только левый клик')
-    return false ;
+    return false;
 }
-function press(){
-    alert('Клавиатура отключена по Т3, работает только левый клик');
-    return false ;
+
+function press() {
+    return false;
 }
-document.onkeydown=press;
+
+document.onkeydown = press;
 // блокировка клавы + правого клика
 
 
@@ -33,10 +33,15 @@ for (let i = 0; i < allBtns.length; i++) {
     let btn = allBtns[i];
     btn.addEventListener('click', function (e) {
         clickNumber(e.target.textContent);
-        console.log(e.target.textContent);
-    });
+        //    console.log(e.target.textContent);
+        if (e.target.textContent == 0 && display.value === '0') {
+            check = true;
+        }
 
+    });
 }
+
+
 let clickNumber = num => {
     if (check) {
         display.value = num;
@@ -46,137 +51,183 @@ let clickNumber = num => {
         displayCut(display.value);
     }
 }
-
-dubBtn.addEventListener('click', function (e) {
-    for (let i = 0; i < display.value.length; i++) {
-        if (display.value[i] === '.') {
-            return;
+if (dubBtn) {
+    dubBtn.addEventListener('click', function (e) {
+        for (let i = 0; i < display.value.length; i++) {
+            if (display.value[i] === '.') {
+                return;
+            }
         }
-    }
-    display.value += '.';
-    check = false;
-});
-plusBtn.addEventListener('click', function () {
-    lastOperation();
-    memoryNumber = +display.value;
-    flag = '+';
-    check = true;
-    isNegative = false;
-    ressultFlag = true;
-    console.log("+");
-});
-minusBtn.addEventListener('click', function () {
-    lastOperation();
-    memoryNumber = +display.value;
-    flag = '-';
-    check = true;
-    ressultFlag = true;
-    console.log("-");
-});
-divideBtn.addEventListener('click', function () {
-    lastOperation();
-    if (memoryNumber === 0 && display.value === '0') {
+        display.value += '.';
+        check = false;
+    });
+}
 
-        display.value = '0';
-    }
-    if (isNaN(display.value) || isNaN(memoryNumber)) {
+if (plusBtn) {
+    plusBtn.addEventListener('click', function () {
+        lastOperation();
+        cutDisplay(display.value);
+        memoryNumber = +display.value;
+        flag = '+';
+        check = true;
+        isNegative = false;
+        ressultFlag = true;
+        console.log("+");
+    });
+}
 
-        display.value = '0';
-    }
-    memoryNumber = +display.value;
-    flag = '/';
-    check = true;
-    ressultFlag = true;
-    console.log("/");
-});
-multiplyBtn.addEventListener('click', function () {
-    lastOperation();
-    memoryNumber = +display.value;
-    flag = '*';
-    check = true;
-    ressultFlag = true;
-    console.log("*");
-});
-clearBtn.addEventListener('click', function () {
-    display.value = 0;
-    memoryNumber = 0;
-    flag = '';
-    check = true;
-    ressultFlag = true;
-    console.log("Clear");
-});
-ressultBtn.addEventListener('click', function () {
-    if (ressultFlag) {
-        countNumber = +display.value;
-    }
-    switch (flag) {
-        case '+':
-            memoryNumber = Summ(memoryNumber, countNumber);
-            check = true;
-            isPointOn = true;
-            ressultFlag = false;
-            break;
-        case '-':
-            memoryNumber = minus(memoryNumber, countNumber);
-            check = true;
-            isPointOn = true;
-            ressultFlag = false;
-            break;
-        case '/':
-            if (countNumber === 0) {
-                memoryNumber = 0;
-                display.value = countNumber;
-            } else if (countNumber === '0') {
-                memoryNumber = 0;
-                display.value = countNumber;
-            } else {
-                memoryNumber = divide(memoryNumber, countNumber);
+if (minusBtn) {
+    minusBtn.addEventListener('click', function () {
+        lastOperation();
+        memoryNumber = +display.value;
+        flag = '-';
+        check = true;
+        ressultFlag = true;
+        console.log("-");
+    });
+}
+if (divideBtn) {
+    divideBtn.addEventListener('click', function () {
+        lastOperation();
+        if (memoryNumber === 0 && display.value === '0') {
+
+            display.value = '0';
+        }
+        if (isNaN(display.value) || isNaN(memoryNumber)) {
+
+            display.value = '0';
+        }
+        memoryNumber = +display.value;
+        flag = '/';
+        check = true;
+        ressultFlag = true;
+        console.log("/");
+    });
+}
+
+if (multiplyBtn) {
+    multiplyBtn.addEventListener('click', function () {
+        lastOperation();
+        memoryNumber = +display.value;
+        cutDisplay(memoryNumber);
+        flag = '*';
+        check = true;
+        ressultFlag = true;
+        console.log("*");
+    });
+}
+if (clearBtn) {
+    clearBtn.addEventListener('click', function () {
+        display.value = 0;
+        memoryNumber = 0;
+        flag = '';
+        check = true;
+        ressultFlag = true;
+        console.log("Clear");
+    });
+}
+if (ressultBtn) {
+    ressultBtn.addEventListener('click', function () {
+        if (ressultFlag) {
+            countNumber = +display.value;
+            switch (flag) {
+                case '+':
+                    memoryNumber = Summ(memoryNumber, countNumber);
+                    check = true;
+                    isPointOn = true;
+                    ressultFlag = false;
+                    break;
+                case '-':
+                    memoryNumber = minus(memoryNumber, countNumber);
+                    check = true;
+                    isPointOn = true;
+                    ressultFlag = false;
+                    break;
+                case '/':
+                    if (countNumber === 0) {
+                        memoryNumber = 0;
+                        display.value = countNumber;
+                    } else if (countNumber === '0') {
+                        memoryNumber = 0;
+                        display.value = countNumber;
+                    } else {
+                        memoryNumber = divide(memoryNumber, countNumber);
+                    }
+
+                    check = true;
+                    isPointOn = true;
+                    ressultFlag = false;
+                    break;
+                case '*':
+                    memoryNumber = multiply(memoryNumber, countNumber);
+                    check = true;
+                    isPointOn = true;
+                    ressultFlag = false;
+                    break;
             }
 
-            check = true;
-            isPointOn = true;
-            ressultFlag = false;
-            break;
-        case '*':
-            memoryNumber = multiply(memoryNumber, countNumber);
-            check = true;
-            isPointOn = true;
-            ressultFlag = false;
-            break;
-    }
-    display.value = memoryNumber;
-    displayCut(display.value);
-    memoryNumber = 0;
-    countNumber = 0;
-});
+            if (flag == '') {
+                return false;
+            }
+            display.value = memoryNumber;
+            displayCut(display.value);
+            memoryNumber = 0;
+            countNumber = 0;
+            flag = '';
+        }
+    });
+}
+
 
 function Summ(a, b) {
-    if(a == null || b == null){   // проверяем не приходит ли пустота в нашу функцию  
-        return false;// это не оьезательно
+    if (a == null || b == null) {
+        return false;
     }
-    if(typeof a !== 'number' || typeof b !== 'number'){ // проверка что приходят только числа)) 
-        return 'не число'; 
-    }
-    else{
-        a += b;  // а возвращается числом, число хер откатишь ну в плане 
-        let d = String(a); // а вот тут магия начинается
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        return 'не число';
+    } else {
+        a += b;
+        let d = String(a);
+        for (let i = 0; i < d.length; i++) {
+            let dot = '.';
+            let idx = d.indexOf(dot);
+            if (idx > 9) {
+                console.log(idx)
+                return display.value = 'error'
+            }
+            else if(d.length  > 9 && idx == -1){
+                console.log(idx)
+                return display.value = 'error'
+            }
+        }
         a = cutDisplay(d);
         a = parseFloat(a);
         return a;
-    }   найс
+    }
 
 }
 
 function minus(a, b) {
-    if(a == null || b == null){
+    if (a == null || b == null) {
         return false;
     }
-    if(typeof a !== 'number' || typeof b !== 'number'){
+    if (typeof a !== 'number' || typeof b !== 'number') {
         return 'не число';
-    }
-    else{
+    } else {
         a -= b;
         let d = String(a);
+        for (let i = 0; i < d.length; i++) {
+            let dot = '.';
+            let idx = d.indexOf(dot);
+            if (idx > 9) {
+                console.log(idx)
+                return display.value = 'error'
+            }
+            else if(d.length  > 9 && idx == -1){
+                console.log(idx)
+                return display.value = 'error'
+            }
+        }
         a = cutDisplay(d);
         a = parseFloat(a);
         return a;
@@ -184,18 +235,28 @@ function minus(a, b) {
 }
 
 function divide(a, b) {
-    if(a == null || b == null){
+    if (a == null || b == null) {
         return false;
     }
-    if(typeof a !== 'number' || typeof b !== 'number'){
+    if (typeof a !== 'number' || typeof b !== 'number') {
         return 'не число';
-    }
-    else if (b === 0){
+    } else if (b === 0) {
         return 0;
-    }
-    else{
+    } else {
         a /= b;
         let d = String(a);
+        for (let i = 0; i < d.length; i++) {
+            let dot = '.';
+            let idx = d.indexOf(dot);
+            if (idx > 9) {
+                console.log(idx)
+                return display.value = 'error'
+            }
+            else if(d.length  > 9 && idx == -1){
+                console.log(idx)
+                return display.value = 'error'
+            }
+        }
         a = cutDisplay(d);
         a = parseFloat(a);
         return a;
@@ -204,18 +265,30 @@ function divide(a, b) {
 }
 
 function multiply(a, b) {
-    if(a == null || b == null){
+    if (a == null || b == null) {
         return false;
     }
-    if(typeof a !== 'number' || typeof b !== 'number'){
+    if (typeof a !== 'number' || typeof b !== 'number') {
         return 'не число';
-    }
-    else if (b === 0){
+    } else if (b === 0) {
         return 0;
-    }
-    else{
+    } else {
         a *= b;
         let d = String(a);
+
+        for (let i = 0; i < d.length; i++) {
+            let dot = '.';
+            let idx = d.indexOf(dot);
+            if (idx > 9) {
+                console.log(idx)
+                return display.value = 'error'
+            }
+            else if(d.length  > 9 && idx == -1){
+                console.log(idx)
+                return display.value = 'error'
+            }
+        }
+
         a = cutDisplay(d);
         a = parseFloat(a);
         return a;
@@ -223,7 +296,7 @@ function multiply(a, b) {
 }
 
 function cutDisplay(a) {
-    if (a == null){
+    if (a == null) {
         return false
     }
     if (a.length > 9) {
@@ -232,17 +305,19 @@ function cutDisplay(a) {
     return a;
 }
 
-function displayCut(a){
+function displayCut(a) {
     display.value = cutDisplay(a)
 }
 
 function lastOperation() {
+
     switch (flag) {
         case '+' :
             if (check) {
+
                 memoryNumber = display.value;
             } else {
-                memoryNumber += +display.value;
+                memoryNumber = Summ(memoryNumber, Number(display.value));
             }
             display.value = memoryNumber;
             cutDisplay(display.value);
@@ -251,7 +326,7 @@ function lastOperation() {
             if (check) {
                 memoryNumber = display.value;
             } else {
-                memoryNumber -= +display.value;
+                memoryNumber = minus(memoryNumber, Number(display.value));
             }
             display.value = memoryNumber;
             cutDisplay(display.value);
@@ -260,7 +335,7 @@ function lastOperation() {
             if (check) {
                 memoryNumber = display.value;
             } else {
-                memoryNumber /= +display.value;
+                memoryNumber = divide(memoryNumber, Number(display.value));
             }
             display.value = memoryNumber;
             cutDisplay(display.value);
@@ -269,11 +344,12 @@ function lastOperation() {
             if (check) {
                 memoryNumber = display.value;
             } else {
-                memoryNumber *= +display.value;
+                memoryNumber = multiply(memoryNumber, Number(display.value));
             }
             display.value = memoryNumber;
             cutDisplay(display.value);
             break;
     }
+
 }
 
