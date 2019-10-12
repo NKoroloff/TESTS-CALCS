@@ -831,7 +831,7 @@ describe("function cutDisplay", function() {
     it("call function cutDisplay without arg return false", function () {
         const a   = null;
         const exp = false;
-        const act = cutDisplay();
+        const act = cutDisplay(a);
 
         assert.equal(act, exp);
     });
