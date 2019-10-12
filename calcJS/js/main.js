@@ -23,6 +23,7 @@ window.oncontextmenu = function () {
 }
 function press(){
     alert('Клавиатура отключена по Т3, работает только левый клик');
+    return false ;
 }
 document.onkeydown=press;
 // блокировка клавы + правого клика
