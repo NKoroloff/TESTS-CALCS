@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56498f41-dea6-47f4-bc15-9cfcb4a7ed80" name="Default Changelist" comment="" />
+    <list default="true" id="56498f41-dea6-47f4-bc15-9cfcb4a7ed80" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../calcJS.7z" beforeDir="false" afterPath="$PROJECT_DIR$/../calcJS.7z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -12,6 +17,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -39,12 +45,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.test.js">
     <configuration name="main.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="main.js" working-dir="$PROJECT_DIR$/js">
+      <method v="2" />
+    </configuration>
+    <configuration name="test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="test.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.test.js" />
         <item itemvalue="Node.js.main.js" />
       </list>
     </recent_temporary>
@@ -64,7 +74,7 @@
       <workItem from="1570740638583" duration="5717000" />
       <workItem from="1570823631264" duration="2056000" />
       <workItem from="1570825834451" duration="22000" />
-      <workItem from="1570888999423" duration="21556000" />
+      <workItem from="1570888999423" duration="25905000" />
     </task>
     <servers />
   </component>

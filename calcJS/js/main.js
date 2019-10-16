@@ -216,6 +216,7 @@ function minus(a, b) {
         a -= b;
         let d = String(a);
         for (let i = 0; i < d.length; i++) {
+            let flagMinus = '-';
             let dot = '.';
             let idx = d.indexOf(dot);
             if (idx > 9) {
