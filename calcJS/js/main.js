@@ -60,6 +60,7 @@ if (dubBtn) {
         }
         display.value += '.';
         check = false;
+        displayCut(display.value);
     });
 }
 
