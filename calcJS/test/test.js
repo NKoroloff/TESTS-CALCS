@@ -4,7 +4,7 @@ describe("function summ", function() {
         const a = 10;
         const b = 23;
         const exp = 33;
-        const act = Summ(a, b);
+        const act = logic.summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -13,7 +13,7 @@ describe("function summ", function() {
         const a = 0;
         const b = 45;
         const exp = 45;
-        const act = Summ(a, b);
+        const act = logic.summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -22,7 +22,7 @@ describe("function summ", function() {
         const a = 67;
         const b = 0;
         const exp = 67;
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -31,7 +31,7 @@ describe("function summ", function() {
         const a = 1.1;
         const b = 8.9;
         const exp = 10;
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -40,7 +40,7 @@ describe("function summ", function() {
         const a = 2.3;
         const b = 4.5;
         const exp = 6.8;
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -49,7 +49,7 @@ describe("function summ", function() {
         const a = 0;
         const b = 0;
         const exp = 0;
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -58,7 +58,7 @@ describe("function summ", function() {
         const a = -32;
         const b = 45;
         const exp = 13;
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -67,7 +67,7 @@ describe("function summ", function() {
         const a = -67;
         const b = 12;
         const exp = -55;
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -76,7 +76,7 @@ describe("function summ", function() {
         const a = -1.234567;
         const b = -1;
         const exp = -2.234567;
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
@@ -85,60 +85,60 @@ describe("function summ", function() {
         const a = 0.0000001;
         const b = 1;
         const exp = 1.0000001;
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
 
-    it("call function Summ with args memoryNumber = '-8.9', countNumber = 2 and return не число", function () {
+    it("call function summ with args memoryNumber = '-8.9', countNumber = 2 and return не число", function () {
         const a = '-8.9';
         const b = 2;
         const exp = 'не число';
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
 
-    it("call function Summ with args memoryNumber = -8.9, countNumber = '2' and return не число", function () {
+    it("call function summ with args memoryNumber = -8.9, countNumber = '2' and return не число", function () {
         const a = -8.9;
         const b = '2';
         const exp = 'не число';
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
 
-    it("call function Summ with args memoryNumber = '-8.9', countNumber = '2' and return не число", function () {
+    it("call function summ with args memoryNumber = '-8.9', countNumber = '2' and return не число", function () {
         const a = '-8.9';
         const b = '2';
         const exp = 'не число';
-        const act = Summ(a, b);
+        const act = summ(a, b);
 
         assert.equal(act, exp);
     });
-    it("call function Summ with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
+    it("call function summ with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
         const a = 15;
         const b = null;
         const exp = false;
-        const act = Summ(a);
+        const act = summ(a);
 
         assert.equal(act, exp);
     });
 
-    it("call function Summ with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
+    it("call function summ with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
         const a = null;
         const b = 15;
         const exp = false;
-        const act = Summ(b);
+        const act = summ(b);
 
         assert.equal(act, exp);
     });
 
-    it("call function Summ with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
+    it("call function summ with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
         const a = null;
         const b = null;
         const exp = false;
-        const act = Summ();
+        const act = summ();
 
         assert.equal(act, exp);
     });
@@ -645,7 +645,7 @@ describe("function divide", function() {
 
         assert.equal(act, exp);
     });
-    it("call function divide with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
+    it("call function divide with arg a = 15  and b = null countNumber expected false ", function () {
         const a = 15;
         const b = null;
         const exp = false;
@@ -654,7 +654,7 @@ describe("function divide", function() {
         assert.equal(act, exp);
     });
 
-    it("call function divide with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
+    it("call function divide with arg a = null and  b = 15  expected false ", function () {
         const a = null;
         const b = 15;
         const exp = false;
@@ -663,7 +663,7 @@ describe("function divide", function() {
         assert.equal(act, exp);
     });
 
-    it("call function divide with arg memoryNumber = 15 and without arg countNumber expected false ", function () {
+    it("call function divide with arg a = null b = null  expected false ", function () {
         const a = null;
         const b = null;
         const exp = false;
@@ -804,13 +804,6 @@ describe("function cutDisplay", function() {
         assert.equal(act, exp);
     });
 
-    it("call function cutDisplay with args a = -44444444.44444 and return -44444444 symbols", function () {
-        const a   = '-44444444.44444';
-        const exp = -44444444;
-        const act = cutDisplay(a);
-
-        assert.equal(act, exp);
-    });
 
     it("call function cutDisplay with args a = -0.143456789 and return -0.143456 symbols", function () {
         const a   = '-0.143456789';
@@ -820,13 +813,6 @@ describe("function cutDisplay", function() {
         assert.equal(act, exp);
     });
 
-    it("call function cutDisplay with args a = -0.143456789 and return -0.143456 symbols", function () {
-        const a   = '-0.143456789';
-        const exp = -0.143456;
-        const act = cutDisplay(a);
-
-        assert.equal(act, exp);
-    });
 
     it("call function cutDisplay without arg return false", function () {
         const a   = null;

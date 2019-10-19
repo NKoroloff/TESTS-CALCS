@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56498f41-dea6-47f4-bc15-9cfcb4a7ed80" name="Default Changelist" comment="" />
+    <list default="true" id="56498f41-dea6-47f4-bc15-9cfcb4a7ed80" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/js/controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/init.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/logic.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests.html" beforeDir="false" afterPath="$PROJECT_DIR$/tests.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +81,8 @@
       <workItem from="1570823631264" duration="2056000" />
       <workItem from="1570825834451" duration="22000" />
       <workItem from="1570888999423" duration="28885000" />
+      <workItem from="1571418992571" duration="10645000" />
+      <workItem from="1571483221439" duration="23648000" />
     </task>
     <servers />
   </component>

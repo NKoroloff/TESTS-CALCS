@@ -85,7 +85,7 @@ button {
     font-weight: 700;
     font-size: 20px
 }
-#dub{
+#dot{
     width:25%;
     background: #ffa6008f;
     cursor:pointer;
@@ -94,7 +94,7 @@ button {
     font-weight: 700;
     font-size: 20px
 }
-.btn_op:hover ,#dub:hover{
+.btn_op:hover ,#dot:hover{
     background: #ffa704;
 }
 

@@ -1,6 +1,6 @@
 let memoryNumber = 0;
 let countNumber = 0;
-let check = true;
+let isCheck = true;
 let isPointOn = true;
 let isNegative = false;
 let ressultFlag = true;
@@ -35,22 +35,14 @@ for (let i = 0; i < allBtns.length; i++) {
         clickNumber(e.target.textContent);
         //    console.log(e.target.textContent);
         if (e.target.textContent == 0 && display.value === '0') {
-            check = true;
+            isCheck = true;
         }
 
     });
 }
 
 
-let clickNumber = num => {
-    if (check) {
-        display.value = num;
-        check = false;
-    } else {
-        display.value += num;
-        displayCut(display.value);
-    }
-}
+
 if (dubBtn) {
     dubBtn.addEventListener('click', function (e) {
         for (let i = 0; i < display.value.length; i++) {
@@ -59,7 +51,7 @@ if (dubBtn) {
             }
         }
         display.value += '.';
-        check = false;
+        isCheck = false;
         displayCut(display.value);
     });
 }
@@ -70,7 +62,7 @@ if (plusBtn) {
         cutDisplay(display.value);
         memoryNumber = +display.value;
         flag = '+';
-        check = true;
+        isCheck = true;
         isNegative = false;
         ressultFlag = true;
         console.log("+");
@@ -82,7 +74,7 @@ if (minusBtn) {
         lastOperation();
         memoryNumber = +display.value;
         flag = '-';
-        check = true;
+        isCheck = true;
         ressultFlag = true;
         console.log("-");
     });
@@ -100,7 +92,7 @@ if (divideBtn) {
         }
         memoryNumber = +display.value;
         flag = '/';
-        check = true;
+        isCheck = true;
         ressultFlag = true;
         console.log("/");
     });
@@ -112,7 +104,7 @@ if (multiplyBtn) {
         memoryNumber = +display.value;
         cutDisplay(memoryNumber);
         flag = '*';
-        check = true;
+        isCheck = true;
         ressultFlag = true;
         console.log("*");
     });
@@ -122,7 +114,7 @@ if (clearBtn) {
         display.value = 0;
         memoryNumber = 0;
         flag = '';
-        check = true;
+        isCheck = true;
         ressultFlag = true;
         console.log("Clear");
     });
@@ -134,13 +126,13 @@ if (ressultBtn) {
             switch (flag) {
                 case '+':
                     memoryNumber = Summ(memoryNumber, countNumber);
-                    check = true;
+                    isCheck = true;
                     isPointOn = true;
                     ressultFlag = false;
                     break;
                 case '-':
                     memoryNumber = minus(memoryNumber, countNumber);
-                    check = true;
+                    isCheck = true;
                     isPointOn = true;
                     ressultFlag = false;
                     break;
@@ -155,13 +147,13 @@ if (ressultBtn) {
                         memoryNumber = divide(memoryNumber, countNumber);
                     }
 
-                    check = true;
+                    isCheck = true;
                     isPointOn = true;
                     ressultFlag = false;
                     break;
                 case '*':
                     memoryNumber = multiply(memoryNumber, countNumber);
-                    check = true;
+                    isCheck = true;
                     isPointOn = true;
                     ressultFlag = false;
                     break;
@@ -249,11 +241,7 @@ function divide(a, b) {
         for (let i = 0; i < d.length; i++) {
             let dot = '.';
             let idx = d.indexOf(dot);
-            if (idx > 9) {
-                console.log(idx)
-                return display.value = 'error'
-            }
-            else if(d.length  > 9 && idx == -1){
+            if (idx > 9 || d.length  > 9 && idx == -1) {
                 console.log(idx)
                 return display.value = 'error'
             }
@@ -314,7 +302,7 @@ function lastOperation() {
 
     switch (flag) {
         case '+' :
-            if (check) {
+            if (isCheck) {
 
                 memoryNumber = display.value;
             } else {
@@ -324,7 +312,7 @@ function lastOperation() {
             cutDisplay(display.value);
             break;
         case '-' :
-            if (check) {
+            if (isCheck) {
                 memoryNumber = display.value;
             } else {
                 memoryNumber = minus(memoryNumber, Number(display.value));
@@ -333,7 +321,7 @@ function lastOperation() {
             cutDisplay(display.value);
             break;
         case '/' :
-            if (check) {
+            if (isCheck) {
                 memoryNumber = display.value;
             } else {
                 memoryNumber = divide(memoryNumber, Number(display.value));
@@ -342,7 +330,7 @@ function lastOperation() {
             cutDisplay(display.value);
             break;
         case '*' :
-            if (check) {
+            if (isCheck) {
                 memoryNumber = display.value;
             } else {
                 memoryNumber = multiply(memoryNumber, Number(display.value));
