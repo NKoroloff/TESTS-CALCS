@@ -1,6 +1,6 @@
 function initElements() {
     dotBtn = document.getElementById('dot');
-    display = document.getElementById('talo');
+    display = document.getElementById('display');
     clearBtn = document.getElementById('del');
     plusBtn = document.getElementById('plusBtn');
     minusBtn = document.getElementById('minusBtn');

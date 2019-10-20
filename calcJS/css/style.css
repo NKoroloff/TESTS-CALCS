@@ -21,8 +21,8 @@ body {
     padding: 10px
 }
 
-#talo,
-#talo input {
+#display,
+#display input {
     width: 100%;
     box-sizing: border-box;
     border: none;
@@ -40,7 +40,7 @@ body {
 button {
     outline: 0
 }
-#talo {
+#display {
     border: 1px solid #dadada;
     padding-right: 5px;
     cursor: not-allowed;
@@ -50,7 +50,7 @@ button {
     overflow: hidden
 }
 
-#talo:focus {
+#display:focus {
     outline: 0
 }
 
