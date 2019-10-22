@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="56498f41-dea6-47f4-bc15-9cfcb4a7ed80" name="Default Changelist" comment="" />
+    <list default="true" id="56498f41-dea6-47f4-bc15-9cfcb4a7ed80" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../calcJS.7z" beforeDir="false" afterPath="$PROJECT_DIR$/../calcJS.7z" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,7 +29,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../ArrayList,LinkedList" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -72,6 +75,8 @@
       <workItem from="1570888999423" duration="28885000" />
       <workItem from="1571418992571" duration="10645000" />
       <workItem from="1571483221439" duration="25011000" />
+      <workItem from="1571681496509" duration="3749000" />
+      <workItem from="1571737182918" duration="9665000" />
     </task>
     <servers />
   </component>
