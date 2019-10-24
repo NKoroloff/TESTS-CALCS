@@ -214,6 +214,7 @@
             this.b1.UseVisualStyleBackColor = false;
             this.b1.Click += new System.EventHandler(this.b1_Click);
             this.b1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button14_MouseClick);
+            this.b1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button14_MouseClick);
             // 
             // button15
             // 
@@ -258,6 +259,9 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.textBox1.ContextMenuStrip = this.contextMenuStrip1;
+            this.textBox1.Enabled = false;
+            this.textBox1.HideSelection = false;
             this.textBox1.Location = new System.Drawing.Point(238, 189);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;

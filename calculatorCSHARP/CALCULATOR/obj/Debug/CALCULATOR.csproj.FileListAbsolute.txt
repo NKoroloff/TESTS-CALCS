@@ -7,3 +7,22 @@ C:\Users\pieceduke\source\repos\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.Prope
 C:\Users\pieceduke\source\repos\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.csproj.GenerateResource.cache
 C:\Users\pieceduke\source\repos\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.exe
 C:\Users\pieceduke\source\repos\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.pdb
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\bin\Debug\CALCULATOR.exe.config
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\bin\Debug\CALCULATOR.exe
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\bin\Debug\CALCULATOR.pdb
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.csprojAssemblyReference.cache
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.Form1.resources
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.Properties.Resources.resources
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.csproj.GenerateResource.cache
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.csproj.CoreCompileInputs.cache
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.exe
+C:\Users\Undermind\Downloads\Telegram Desktop\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.pdb
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\bin\Debug\CALCULATOR.exe.config
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\bin\Debug\CALCULATOR.exe
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.csprojAssemblyReference.cache
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.Form1.resources
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.Properties.Resources.resources
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.csproj.GenerateResource.cache
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.exe
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\obj\Debug\CALCULATOR.pdb
+C:\Users\pieceduke\Downloads\Calcocalco\CALCULATOR\CALCULATOR\bin\Debug\CALCULATOR.pdb

@@ -12,9 +12,12 @@ namespace CALCULATOR
 {
     public partial class Form1 : Form
     {
+      
         public Form1()
         {
             InitializeComponent();
+            textBox1.Text = "0";
+           
         }
 
         private bool isCheck = true;
@@ -57,7 +60,7 @@ namespace CALCULATOR
         {
             this.memoryNumber = value;
         }
-
+       
         public double GetMemoryNumber()
         {
             return this.memoryNumber;
@@ -75,6 +78,10 @@ namespace CALCULATOR
 
         public void SetDisplayValue(string value)
         {
+            if (textBox1.Text == "0")
+            {
+                textBox1.Text = "";
+            }
             if (textBox1.Text.Length > 9) return;
             textBox1.Text += value;
         }
@@ -84,32 +91,14 @@ namespace CALCULATOR
             return textBox1.Text;
         }
         public void onOperationsClickBtn(char operType)
-        {
+        {         
             if (IsError() == false) return;
-
 
             SetMemoryNumber(Convert.ToDouble(GetDisplayValue() ));
             SetOperationType(operType);
             SetIsCheck(true);
             SetIsResult(true);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -129,12 +118,11 @@ namespace CALCULATOR
         }
 
         private void button10_Click(object sender, EventArgs e)
-        {
-            isZero();
+        {          
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(2));
@@ -157,11 +145,10 @@ namespace CALCULATOR
 
         private void b1_Click(object sender, EventArgs e)
         {
-            isZero();
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(1));
@@ -170,11 +157,10 @@ namespace CALCULATOR
 
         private void button9_Click(object sender, EventArgs e)
         {
-            isZero();
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(3));
@@ -182,11 +168,10 @@ namespace CALCULATOR
 
         private void button15_Click(object sender, EventArgs e)
         {
-            isZero();
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(4));
@@ -194,11 +179,10 @@ namespace CALCULATOR
 
         private void button3_Click(object sender, EventArgs e)
         {
-            isZero();
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(5));
@@ -207,11 +191,10 @@ namespace CALCULATOR
 
         private void button4_Click(object sender, EventArgs e)
         {
-            isZero();
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(6));
@@ -219,11 +202,10 @@ namespace CALCULATOR
 
         private void button2_Click(object sender, EventArgs e)
         {
-            isZero();
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(7));
@@ -231,11 +213,10 @@ namespace CALCULATOR
 
         private void button1_Click(object sender, EventArgs e)
         {
-            isZero();
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(8));
@@ -243,11 +224,10 @@ namespace CALCULATOR
 
         private void button6_Click(object sender, EventArgs e)
         {
-            isZero();
             if (IsError() == false) return;
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(9));
@@ -256,6 +236,8 @@ namespace CALCULATOR
         private void button5_Click(object sender, EventArgs e)
         {
             if (IsError() == false) return;
+             if (textBox1.Text == "0") SetIsCheck(true);
+
             if (Convert.ToString(textBox1.Text) == Convert.ToString("0"))
             {
                 return;
@@ -263,10 +245,10 @@ namespace CALCULATOR
 
             if (GetIsCheck() == true)
             {
-                textBox1.Text = Convert.ToString(' ');
+                textBox1.Text = "";
             }
             SetIsCheck(false);
-            SetDisplayValue(Convert.ToString(0));
+            SetDisplayValue(Convert.ToString(0));           
         }
 
         private void button13_Click(object sender, EventArgs e)
@@ -276,11 +258,12 @@ namespace CALCULATOR
             {
                 if (Convert.ToString(textBox1.Text[i]) == Convert.ToString(',')) return;
             }
+             SetIsCheck(false);
             SetDisplayValue(Convert.ToString(','));
         }
 
         private void button11_Click(object sender, EventArgs e)
-        {
+        {        
             if (IsError() == false) return;
             LastOperation();
             onOperationsClickBtn('+');
@@ -295,19 +278,18 @@ namespace CALCULATOR
         private void button17_Click(object sender, EventArgs e)
         {
             SetMemoryNumber(0);
+            SetIsCheck(true);
             SetOperationType(' ');
             textBox1.Text = "0";
         }
 
         public void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+         
         }
 
-
-
         public void LastOperation()
-        {
+        {   
             if (GetIsCheck())
             {
                 SetMemoryNumber(Convert.ToDouble(textBox1.Text));
@@ -338,8 +320,8 @@ namespace CALCULATOR
                     textBox1.Text = Convert.ToString(GetMemoryNumber());
             }
 
-
-        }
+               
+            }
         }
 
         public double summ(double a, double b)
@@ -444,22 +426,35 @@ namespace CALCULATOR
                         break;
                 }
                 textBox1.Text = Convert.ToString(GetMemoryNumber());
+
+                var findDouble = textBox1.Text.LastIndexOfAny(new[] { ',' });
+
+                if (textBox1.Text.Length > 9 && (findDouble == -1 || findDouble >= 9))
+                {
+
+                    textBox1.Text = "error";
+
+                    return;
+                }
+                else if (textBox1.Text.Length < 9)
+                {
+                    textBox1.Text = textBox1.Text;
+                }
+                else if (textBox1.Text.Length > 9 && (findDouble >= 0 && findDouble <= 9))
+                    {
+                    textBox1.Text = textBox1.Text.Substring(0, 9);
+                }
             }
+       
+
+  
             SetIsResult(false);
             SetOperationType(' ');
             SetMemoryNumber(0);
             SetIsCheck(true);      
         }
 
-        private void isZero()
-        {
-              
-            if (textBox1.Text == "0" || textBox1.Text == "error")
-            {
-                textBox1.Text = "";
-            }
-        }
-
+  
         private bool IsError()
         {
     
@@ -469,5 +464,6 @@ namespace CALCULATOR
             }
             return true;
         }
+        
     }
 }
