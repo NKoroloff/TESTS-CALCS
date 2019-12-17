@@ -17,7 +17,6 @@ namespace CALCULATOR
         {
             InitializeComponent();
             textBox1.Text = "0";
-           
         }
 
         private bool isCheck = true;
@@ -82,7 +81,7 @@ namespace CALCULATOR
             {
                 textBox1.Text = "";
             }
-            if (textBox1.Text.Length > 9) return;
+            if (textBox1.Text.Length > 8) return;
             textBox1.Text += value;
         }
 
@@ -107,7 +106,15 @@ namespace CALCULATOR
 
         private void button7_Click(object sender, EventArgs e)
         {
+            /*if (GetMemoryNumber() == Convert.ToDouble(textBox1.Text) && GetIsCheck() == true) return;*/
+           
             if (IsError() == false) return;
+            if (textBox1.Text == "0")
+            {
+                SetMemoryNumber(0);
+                Console.WriteLine("Добро пожаловать в 00000");
+            }
+            Console.WriteLine("ЭМАКАЕМ МИНУС");
             LastOperation();
             onOperationsClickBtn('-');
         }
@@ -129,7 +136,8 @@ namespace CALCULATOR
         }
 
         private void button8_Click(object sender, EventArgs e)
-        {           
+        {
+            if (GetMemoryNumber() == Convert.ToDouble(textBox1.Text) && GetIsCheck() == true) return;
             if (IsError() == false) return;
             LastOperation();
             onOperationsClickBtn('/');
@@ -137,6 +145,7 @@ namespace CALCULATOR
 
         private void button16_Click(object sender, EventArgs e)
         {
+            if (GetMemoryNumber() == Convert.ToDouble(textBox1.Text) && GetIsCheck() == true) return;
             if (IsError() == false) return;
             LastOperation();
             onOperationsClickBtn('*');
@@ -236,7 +245,7 @@ namespace CALCULATOR
         private void button5_Click(object sender, EventArgs e)
         {
             if (IsError() == false) return;
-             if (textBox1.Text == "0") SetIsCheck(true);
+            if (textBox1.Text == "0") SetIsCheck(true);
 
             if (Convert.ToString(textBox1.Text) == Convert.ToString("0"))
             {
@@ -263,21 +272,29 @@ namespace CALCULATOR
         }
 
         private void button11_Click(object sender, EventArgs e)
-        {        
+        {
+            if (GetMemoryNumber() == Convert.ToDouble(textBox1.Text) && GetIsCheck() == true) return;
             if (IsError() == false) return;
             LastOperation();
             onOperationsClickBtn('+');
         }
 
         private void button12_Click(object sender, EventArgs e)
-        {
+        {   
+            if(GetOperationType() == '-' && GetMemoryNumber() == 0)
+            {
+                double tmp = Convert.ToDouble(GetDisplayValue());
+                SetDisplayValue("");
+                textBox1.Text = Convert.ToString(0 - tmp );
+                if (textBox1.Text.Length > 9) textBox1.Text = "error";
+            }
             if (IsError() == false) return;
             getResultt();
         }
 
         private void button17_Click(object sender, EventArgs e)
         {
-            SetMemoryNumber(0);
+            ;    SetMemoryNumber(0);
             SetIsCheck(true);
             SetOperationType(' ');
             textBox1.Text = "0";
@@ -301,7 +318,7 @@ namespace CALCULATOR
                     case '+':
                         SetMemoryNumber(summ(GetMemoryNumber(), Convert.ToDouble(textBox1.Text)));
                         break;
-                    case '-':
+                    case '-':                   
                         SetMemoryNumber(minus(GetMemoryNumber(), Convert.ToDouble(textBox1.Text)));
                         break;
                     case '/':
@@ -318,9 +335,8 @@ namespace CALCULATOR
                 else
                 {
                     textBox1.Text = Convert.ToString(GetMemoryNumber());
-            }
-
-               
+                }
+              
             }
         }
 
